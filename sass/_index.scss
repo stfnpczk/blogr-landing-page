@@ -1,17 +1,81 @@
 /*----------------------------
       layout
  ----------------------------*/
-  
-  
-  
+
 /*----------------------------
-      ??? section
+      header section
 ----------------------------*/
-  
-  
-  
+.header {
+  // display: flex;
+  background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
+  border-radius: 0px 0px 0px 100px;
+  padding: 56px 24px 156px;
+  // background: linear-gradient(#e66465, #9198e5);
+
+  &__top-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo-container {
+    width: 82px;
+  }
+
+  &__info {
+    text-align: center;
+  }
+
+  &__heading {
+    font-size: 36px;
+    line-height: 55px;
+    letter-spacing: -1.0800000429153442px;
+    margin: 108px 0 0;
+    color: $white;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 300;
+    color: $white;
+    margin:0 0 48px
+  }
+
+  &__cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  &__button {
+    text-decoration: none;
+    border-radius: 28px;
+
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    padding: 15px 16px;
+
+    
+  }
+
+  &__button--start {
+    background-color: $white;
+    // margin-right: 16px;
+    color: $red;
+  }
+
+  &__button--more {
+    border: 1px solid $white;
+    color: $white;
+    padding: 14px 16px;
+  }
+}
+
 /*----------------------------
       footer section 
 ----------------------------*/
-  
-  
