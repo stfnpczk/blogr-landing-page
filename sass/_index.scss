@@ -10,7 +10,6 @@
   background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
   border-radius: 0px 0px 0px 100px;
   padding: 56px 24px 156px;
-  // background: linear-gradient(#e66465, #9198e5);
 
   &__top-row {
     display: flex;
@@ -80,7 +79,7 @@
 
 .blogr {
   &__content-container-one {
-    margin: 100px 24px 100px;
+    margin: 100px 24px 273px;
   }
 
   &__heading-two {
@@ -91,10 +90,11 @@
   }
 
   // &__features-one {
-  // } 
-  
+  // }
+
   &__editor-image {
-    margin: 38px 0 46px;
+    margin: 37px 0 46px;
+    // margin: 38px 0 46px;
   }
 
   &__text-container {
@@ -109,13 +109,88 @@
   }
 
   &__paragraph {
+    margin: 0;
+    color: #4c5862;
     letter-spacing: 0.5px;
-    margin: 0
+  }
+
+  //content section two
+  &__content-container-two {
+    background: linear-gradient(135deg, #2d2e40 0%, #3f4164 100%);
+    border-radius: 0px 100px;
+    padding: 221px 24px 109px;
+    text-align: center;
+    position: relative;
+  }
+
+  &__illustration-phones {
+    position: absolute;
+    top: clamp(-250px, -43vw, -49px);
+    transform: translateX(-50%);
+    left: 50%;
+    width: clamp(328px, 87.467vw, 472px);
+  }
+
+  &__heading-four {
+    font-size: 40px;
+    line-height: 61px;
+    letter-spacing: -1.2000000476837158px;
+    color: white;
+  }
+
+  &__paragraph--white {
+    color: $white;
+    margin: 10px 0 0;
+  }
+
+  //content section three
+  &__content-container-three {
+    margin: 79px 24px 100px;
   }
 }
-
-//content section two
-
 /*----------------------------
       footer section 
 ----------------------------*/
+.footer {
+  background: #24242c;
+  border-radius: 0px 100px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $white;
+  padding: 75px 0;
+
+  &__logo-container {
+    width: 101px;
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 72px 24px 0;
+    text-align: center;
+    color: $white;
+  }
+
+  &__nav-items {
+    font-family: Ubuntu;
+    font-size: 18px;
+    line-height: 33px;
+  }
+
+  &__nav-label {
+    font-weight: 500;
+    margin: 0 0 21px;
+  }
+
+  &__link a {
+    text-decoration: none;
+    color: $white;
+
+    font-weight: 400;
+    opacity: 0.75;
+  }
+}
+
+
