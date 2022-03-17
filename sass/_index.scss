@@ -8,17 +8,39 @@
 .header {
   // display: flex;
   background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
+  // background: linear-gradient(gray);
   border-radius: 0px 0px 0px 100px;
   padding: 56px 24px 156px;
+
+  @media only screen and (min-width: $desktop) {
+    padding: 63px 161px 155px;
+  }
 
   &__top-row {
     display: flex;
     justify-content: space-between;
     position: relative;
+    
+    @media only screen and (min-width: $desktop) {
+      gap: 63px;
+    }
   }
+
+  
 
   &__logo-container {
     width: 82px;
+
+    @media only screen and (min-width: $desktop) {
+      width: 101px;
+      align-self: center;
+    }
+  }
+
+  @media only screen and (min-width: $desktop) {
+    &__hamburger {
+      display: none;
+    }
   }
 
   &__navigation {
@@ -31,12 +53,25 @@
     border-radius: 5px;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
     // height: 511px;
+
+    @media only screen and (min-width: $desktop) {
+      all: unset;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      width: 100%;
+    }
   }
 
   &__nav-container {
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @media only screen and (min-width: $desktop) {
+      flex-direction: row;
+      gap: 50px;
+    }
   }
 
   &__nav-label {
@@ -45,6 +80,11 @@
     font-size: 18px;
     font-weight: 600;
     line-height: 28px;
+    cursor: pointer;
+
+    @media only screen and (min-width: $desktop) {
+      color: $white;
+    }
   }
 
   &__nav-label::after {
@@ -53,36 +93,87 @@
     margin: 0 0 0 8px;
     // right: 1rem;
     transition: 0.3s ease-in;
+
+    @media only screen and (min-width: $desktop) {
+      content: url(../images/icon-arrow-light.svg);
+    }
   }
 
   details[open] &__nav-label:after {
     transform: rotate(180deg);
   }
 
+  &__nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; //?
+    background: #f0f0f0;
+    border-radius: 5px;
+    padding: 17px 0 25px;
+    margin: 24px 24px 5px;
+
+    @media only screen and (min-width: $desktop) {
+      margin: 0;
+      position: absolute;
+      width: 149px;
+      margin: 24px 0 0 -24px;
+    }
+  }
+
+  &__nav-items a {
+    // font-family: Overpass SemiBold;
+    font-size: 16px;
+    // font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    // letter-spacing: 0px;
+    // text-align: center;
+    opacity: 0.75;
+  }
+
   &__card-transition {
     border: none;
     border-top: 1px solid #e8e4e4;
     margin: 24px;
+
+    @media only screen and (min-width: $desktop) {
+      display: none;
+    }
   }
 
   &__buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 24px;
+
+    @media only screen and (min-width: $desktop) {
+      flex-direction: row;
+    }
   }
 
   &__button--login {
     color: $black;
     font-size: 18px;
     padding: 0;
+
+    @media only screen and (min-width: $desktop) {
+      color: $white;
+    }
   }
 
   &__button--sign-up {
     color: $white;
     background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
     max-width: 137px;
-    // margin: 0 auto;
-    padding: 15px 40px !important;
+    padding: 15px 40px;
+    font-size: 18px;
+
+    @media only screen and (min-width: $desktop) {
+      color: #FF505C;
+      background: $white;
+
+    }
   }
 
   &__info {
@@ -91,18 +182,26 @@
 
   &__heading {
     font-size: 36px;
-    line-height: 55px;
+    font-size: clamp(36px, 4.5vw, 64px);
+    line-height: clamp(55px, 6.8055555556vw, 98px) ;
     letter-spacing: -1.0800000429153442px;
     margin: 108px 0 0;
     color: $white;
 
     span {
       display: block;
+
+      @media only screen and (min-width: 1024px) {
+        display: unset;
+      }
+      
     }
+
+    
   }
 
   &__text {
-    font-size: 18px;
+    font-size: clamp(18px, 1.3888888889vw, 20px);
     font-weight: 300;
     color: $white;
     margin: 0 0 48px;
@@ -112,17 +211,6 @@
     display: flex;
     gap: 16px;
     justify-content: center;
-  }
-
-  &__button {
-    text-decoration: none;
-    border-radius: 28px;
-
-    font-family: Ubuntu;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 18px;
-    padding: 15px 16px;
   }
 
   &__button--start {
@@ -228,6 +316,8 @@
   &__logo-container {
     width: 101px;
   }
+
+  
 
   &__navigation {
     display: flex;
