@@ -191,7 +191,7 @@
     span {
       display: block;
 
-      @media only screen and (min-width: 1024px) {
+      @media only screen and (min-width: $desktop) {
         display: unset;
       }
       
@@ -232,26 +232,55 @@
 
 .blogr {
   &__content-container-one {
-    margin: 100px 24px 273px;
+    padding: 100px 24px 273px;
+
+    @media only screen and (min-width: $desktop) {
+      padding: 71px 0 283px;
+      background: url(../images/illustration-editor-desktop.svg) no-repeat top 70px right -271px;
+      // height: 1110px;
+    }
   }
 
   &__heading-two {
-    font-size: 28px;
-    line-height: 43px;
+    // font-size: 28px;
+    font-size: clamp(28px, 10.667vw, 40px);
+    // line-height: 43px;
+    // line-height: clamp(43px, 11.467vw, 61.28px);
+    letter-spacing: clamp(-0.84px, 0.224vw,-1.2px) ;
     letter-spacing: -0.8399999737739563px;
     text-align: center;
+
+    @media only screen and (min-width: $desktop) {
+      margin: 79px;
+    }
   }
 
   // &__features-one {
+  //   @media only screen and (min-width: $desktop) {
+  //     display: flex;
+  //     flex-direction: column;
+
+  //   }
   // }
 
   &__editor-image {
     margin: 37px 0 46px;
+
+    @media only screen and (min-width: $desktop) {
+      display: none; //eventually replace picture with img
+    }
     // margin: 38px 0 46px;
   }
 
   &__text-container {
     text-align: center;
+
+    @media only screen and (min-width: $desktop) {
+      width: 38%;
+      // max-width: 540px;
+      text-align: left;
+      margin: 0 165px 0;
+    }
   }
 
   &__heading-three {
@@ -259,6 +288,12 @@
     line-height: 32px;
     max-width: 318px;
     margin: 46px auto 16px;
+
+    @media only screen and (min-width: $desktop) {
+      margin: 93px 0 16px;
+      max-width: unset;
+
+    }
   }
 
   &__paragraph {
@@ -274,6 +309,13 @@
     padding: 221px 24px 109px;
     text-align: center;
     position: relative;
+
+    @media only screen and (min-width: $desktop) {
+      display: flex;
+      flex-direction: row-reverse;
+      padding: 90px 165px 90px ;
+      text-align: left;
+    }
   }
 
   &__illustration-phones {
@@ -282,6 +324,20 @@
     transform: translateX(-50%);
     left: 50%;
     width: clamp(328px, 87.467vw, 472px);
+
+    @media only screen and (min-width: $desktop) {
+      top: -49px;
+      transform: unset;
+      left: 123px;
+    }
+  }
+
+  &__text-container-two {
+    @media only screen and (min-width: $desktop) {
+      // flex-basis: 50%;
+      width: 540px;
+      // text-align: right;
+    }
   }
 
   &__heading-four {
@@ -299,6 +355,11 @@
   //content section three
   &__content-container-three {
     margin: 79px 24px 100px;
+
+    @media only screen and (min-width: $desktop) {
+      display: flex;
+      margin: 116px 0 123px -227px;
+    }
   }
 }
 /*----------------------------
@@ -313,6 +374,12 @@
   color: $white;
   padding: 75px 0;
 
+  @media only screen and (min-width: $desktop) {
+    flex-direction: row;
+    padding: 70px 165px;
+    gap: 184px;
+  }
+
   &__logo-container {
     width: 101px;
   }
@@ -326,6 +393,13 @@
     margin: 72px 24px 0;
     text-align: center;
     color: $white;
+
+    @media only screen and (min-width: $desktop) {
+      flex-direction: row;
+      gap: 229px;
+      text-align: left;
+      margin: 0;
+    }
   }
 
   &__nav-items {
