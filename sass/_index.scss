@@ -6,9 +6,7 @@
       header section
 ----------------------------*/
 .header {
-  // display: flex;
   background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
-  // background: linear-gradient(gray);
   border-radius: 0px 0px 0px 100px;
   padding: 56px 24px 156px;
 
@@ -20,13 +18,11 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    
+
     @media only screen and (min-width: $desktop) {
       gap: 63px;
     }
   }
-
-  
 
   &__logo-container {
     width: 82px;
@@ -37,10 +33,51 @@
     }
   }
 
-  @media only screen and (min-width: $desktop) {
-    &__hamburger {
+  &__hamburger {
+    width: 32px;
+    height: 18px;
+    position: relative;
+
+    @media only screen and (min-width: $desktop) {
       display: none;
     }
+  }
+
+  &__hamburger-icon,
+  &__hamburger-icon:before,
+  &__hamburger-icon:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 32px;
+    background: white;
+    transition: all 0.4s ease;
+    display: block;
+  }
+
+  &__hamburger-icon {
+    top: 8px;
+  }
+
+  &__hamburger-icon:before {
+    top: -8px;
+  }
+
+  &__hamburger-icon:after {
+    top: 8px;
+  }
+
+  &__hamburger-active &__hamburger-icon {
+    transform: rotate(-135deg);
+  }
+
+  &__hamburger-active &__hamburger-icon:before,
+  &__hamburger-active &__hamburger-icon:after {
+    top: 0;
+  }
+
+  &__hamburger-active &__hamburger-icon:before {
+    transform: rotate(90deg);
   }
 
   &__navigation {
@@ -52,6 +89,7 @@
     text-align: center;
     border-radius: 5px;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.243444);
+    display: none;
     // height: 511px;
 
     @media only screen and (min-width: $desktop) {
@@ -61,6 +99,19 @@
       align-items: baseline;
       width: 100%;
     }
+  }
+
+  &__hamburger-active + nav {
+    display: block;
+
+    @media only screen and (min-width: $desktop) {
+      display: flex;
+    }
+  }
+
+  &__hamburger-active + nav &__hamburger-icon {
+    background: transparent;
+    transform: rotate(-135deg);
   }
 
   &__nav-container {
@@ -91,7 +142,6 @@
     content: url(../images/icon-arrow-dark.svg);
     position: absolute;
     margin: 0 0 0 8px;
-    // right: 1rem;
     transition: 0.3s ease-in;
 
     @media only screen and (min-width: $desktop) {
@@ -103,13 +153,17 @@
     transform: rotate(180deg);
   }
 
-  details[open]  {
+  details[open] {
     animation: fadeIn 0.6s ease-in-out;
   }
-  
+
   @keyframes fadeIn {
-    0%    {opacity: 0.25; }
-    100%  {opacity: 1; }
+    0% {
+      opacity: 0.25;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   &__nav-items {
@@ -130,13 +184,9 @@
   }
 
   &__nav-items a {
-    // font-family: Overpass SemiBold;
     font-size: 16px;
-    // font-style: normal;
     font-weight: 600;
     line-height: 28px;
-    // letter-spacing: 0px;
-    // text-align: center;
     opacity: 0.75;
   }
 
@@ -179,9 +229,8 @@
     font-size: 18px;
 
     @media only screen and (min-width: $desktop) {
-      color: #FF505C;
+      color: #ff505c;
       background: $white;
-
     }
   }
 
@@ -192,7 +241,7 @@
   &__heading {
     font-size: 36px;
     font-size: clamp(36px, 4.5vw, 64px);
-    line-height: clamp(55px, 6.8055555556vw, 98px) ;
+    line-height: clamp(55px, 6.8055555556vw, 98px);
     letter-spacing: -1.0800000429153442px;
     margin: 108px 0 0;
     color: $white;
@@ -203,10 +252,7 @@
       @media only screen and (min-width: $desktop) {
         display: unset;
       }
-      
     }
-
-    
   }
 
   &__text {
@@ -245,7 +291,8 @@
 
     @media only screen and (min-width: $desktop) {
       padding: 71px 0 283px;
-      background: url(../images/illustration-editor-desktop.svg) no-repeat top 70px right -271px;
+      background: url(../images/illustration-editor-desktop.svg) no-repeat top
+        70px right -271px;
       // height: 1110px;
     }
   }
@@ -255,7 +302,7 @@
     font-size: clamp(28px, 10.667vw, 40px);
     // line-height: 43px;
     // line-height: clamp(43px, 11.467vw, 61.28px);
-    letter-spacing: clamp(-0.84px, 0.224vw,-1.2px) ;
+    letter-spacing: clamp(-0.84px, 0.224vw, -1.2px);
     letter-spacing: -0.8399999737739563px;
     text-align: center;
 
@@ -301,7 +348,6 @@
     @media only screen and (min-width: $desktop) {
       margin: 93px 0 16px;
       max-width: unset;
-
     }
   }
 
@@ -322,7 +368,7 @@
     @media only screen and (min-width: $desktop) {
       display: flex;
       flex-direction: row-reverse;
-      padding: 90px 165px 90px ;
+      padding: 90px 165px 90px;
       text-align: left;
     }
   }
@@ -343,9 +389,7 @@
 
   &__text-container-two {
     @media only screen and (min-width: $desktop) {
-      // flex-basis: 50%;
       width: 540px;
-      // text-align: right;
     }
   }
 
@@ -394,8 +438,6 @@
   &__logo-container {
     width: 101px;
   }
-
-  
 
   &__navigation {
     display: flex;
