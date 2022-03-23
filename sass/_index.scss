@@ -185,9 +185,13 @@
 
   &__nav-items a {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 28px;
     opacity: 0.75;
+  }
+
+  &__nav-items a:hover {
+    font-weight: 700;
   }
 
   &__card-transition {
@@ -227,11 +231,18 @@
     max-width: 137px;
     padding: 15px 40px;
     font-size: 18px;
+    transition: 0.3s ease-in;
 
     @media only screen and (min-width: $desktop) {
-      color: #ff505c;
+      color: $red;
       background: $white;
     }
+  }
+
+  &__button--sign-up:hover,
+  &__button--start:hover {
+    color: $white;
+    background-color: #ff7b86;
   }
 
   &__info {
@@ -269,6 +280,7 @@
   }
 
   &__button--start {
+    transition: 0.3s ease-in;
     background-color: $white;
     color: $red;
   }
@@ -277,6 +289,12 @@
     border: 1px solid $white;
     color: $white;
     padding: 14px 16px;
+    transition: 0.3s ease-in;
+  }
+
+  &__button--more:hover {
+    background-color: $white;
+    color: #ff7b86;
   }
 }
 
@@ -477,4 +495,22 @@
       padding: 15px 0;
     }
   }
+}
+
+.header__nav-label:before {
+  @media only screen and (min-width: $desktop) {
+    background-color: $white;
+    bottom: 2px;
+    content: "";
+    height: 2px;
+    left: 0px;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in;
+    width: 100%;
+  }
+}
+
+.header__nav-label:hover::before {
+  transform: scaleX(1);
 }
