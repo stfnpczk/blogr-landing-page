@@ -588,6 +588,29 @@ a {
   }
 }
 
+@media only screen and (min-width: 1280px) {
+  .header__nav-label:before {
+    background-color: #FFFFFF;
+    bottom: 2px;
+    content: "";
+    height: 2px;
+    left: 0px;
+    position: absolute;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transition: -webkit-transform 0.3s ease-in;
+    transition: -webkit-transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+    width: 100%;
+  }
+}
+
+.header__nav-label:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
 .header__nav-label::after {
   content: url(../images/icon-arrow-dark.svg);
   position: absolute;
@@ -1023,27 +1046,4 @@ details[open] .header__nav-label:after {
   .footer__link a {
     padding: 15px 0;
   }
-}
-
-@media only screen and (min-width: 1280px) {
-  .header__nav-label:before {
-    background-color: #FFFFFF;
-    bottom: 2px;
-    content: "";
-    height: 2px;
-    left: 0px;
-    position: absolute;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    -webkit-transition: -webkit-transform 0.3s ease-in;
-    transition: -webkit-transform 0.3s ease-in;
-    transition: transform 0.3s ease-in;
-    transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
-    width: 100%;
-  }
-}
-
-.header__nav-label:hover::before {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
 }
